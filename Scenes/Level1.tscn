@@ -1,0 +1,193 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Actors/PowerUp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/NextLevelItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelScripts/LevelScripts/Level1Script.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="QuadMesh" id=2]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 154, 188 )
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Environment"]
+position = Vector2( 0, 301 )
+scale = Vector2( 0.396963, -30.16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall2" type="StaticBody2D" parent="Environment"]
+position = Vector2( 1025, 301 )
+scale = Vector2( 0.396963, -30.32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall2"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall2"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall3" type="StaticBody2D" parent="Environment"]
+position = Vector2( 513, 0 )
+rotation = -1.57079
+scale = Vector2( 0.596964, -51.96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall3"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall3"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="Environment"]
+position = Vector2( 515, 603 )
+rotation = -1.57079
+scale = Vector2( 0.716963, -51.96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall4"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall4"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="Environment"]
+position = Vector2( 681, 554 )
+rotation = -1.57079
+scale = Vector2( 0.716963, -34.56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall5"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall5"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="PowerUp" parent="." instance=ExtResource( 1 )]
+position = Vector2( 942, 276 )
+
+[node name="NextLevelItem" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1002, 578 )
+scale = Vector2( 2, 1.75 )
+
+[node name="TutorialText" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TutText1" type="Label" parent="TutorialText"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 299.0
+margin_bottom = 88.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Hey there, You can use W A S D 
+to move around although the movement
+is kind of weird"
+align = 1
+valign = 1
+
+[node name="TutText2" type="Label" parent="TutorialText"]
+margin_left = 498.0
+margin_top = 168.0
+margin_right = 832.0
+margin_bottom = 216.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "You can grab this powerup to  scale in deferent ways"
+align = 1
+valign = 1
+
+[node name="TutText3" type="Label" parent="TutorialText"]
+margin_left = 602.0
+margin_top = 543.0
+margin_right = 936.0
+margin_bottom = 591.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "You need to get here ==>"
+align = 1
+valign = 1
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WinScreen" type="Control" parent="UI"]
+visible = false
+margin_top = -40.0
+margin_right = 40.0
+
+[node name="Panel" type="Panel" parent="UI/WinScreen"]
+margin_left = 355.0
+margin_top = 168.0
+margin_right = 655.0
+margin_bottom = 210.0
+
+[node name="Label" type="Label" parent="UI/WinScreen/Panel"]
+margin_right = 100.0
+margin_bottom = 14.0
+rect_scale = Vector2( 3, 3 )
+text = "Level Complete"
+align = 1
+valign = 1
+
+[node name="NextLevelButton" type="Button" parent="UI/WinScreen"]
+margin_left = 429.0
+margin_top = 296.0
+margin_right = 509.0
+margin_bottom = 316.0
+rect_scale = Vector2( 2, 2 )
+text = "Next Level"
+icon_align = 1
+
+[node name="ReplayLevelButton" type="Button" parent="UI/WinScreen"]
+margin_left = 420.0
+margin_top = 362.0
+margin_right = 508.0
+margin_bottom = 382.0
+rect_scale = Vector2( 2, 2 )
+text = "ReplayLevel"
+icon_align = 1
+
+[node name="BackToMainMenuButton" type="Button" parent="UI/WinScreen"]
+margin_left = 380.0
+margin_top = 427.0
+margin_right = 504.0
+margin_bottom = 447.0
+rect_scale = Vector2( 2, 2 )
+text = "BackToMainMenu"
+icon_align = 1
+
+[node name="QuitButton" type="Button" parent="UI/WinScreen"]
+margin_left = 400.0
+margin_top = 494.0
+margin_right = 512.0
+margin_bottom = 514.0
+rect_scale = Vector2( 2, 2 )
+text = "Quit to desktop"
+icon_align = 1
+
+[connection signal="body_entered" from="PowerUp" to="PowerUp" method="_on_PowerUp_body_entered"]
+[connection signal="picked_powerup" from="PowerUp" to="Player" method="_on_PowerUp_picked_powerup"]
+[connection signal="NextLevelUI" from="NextLevelItem" to="." method="_on_NextLevelItem_NextLevelUI"]
+[connection signal="NextLevelUI" from="NextLevelItem" to="Player" method="_on_NextLevelItem_NextLevelUI"]
+[connection signal="body_entered" from="NextLevelItem" to="NextLevelItem" method="_on_NextLevelItem_body_entered"]
+[connection signal="pressed" from="UI/WinScreen/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/ReplayLevelButton" to="." method="_on_ReplayLevelButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/BackToMainMenuButton" to="." method="_on_BackToMainMenuButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/QuitButton" to="." method="_on_QuitButton_pressed"]

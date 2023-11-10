@@ -1,0 +1,507 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Level2Script.gd" type="Script" id=3]
+[ext_resource path="res://Actors/PowerUp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/LevelScripts/Actors/PowerUp2.gd" type="Script" id=5]
+[ext_resource path="res://Actors/NextLevelItem.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ActorScripts/KillPowerUpScript.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.74048, 10 )
+
+[sub_resource type="QuadMesh" id=2]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 483, 62 )
+
+[node name="PowerUp" parent="." instance=ExtResource( 4 )]
+position = Vector2( 608, 301 )
+script = ExtResource( 5 )
+
+[node name="ImpostorNextLevelItem" parent="." instance=ExtResource( 6 )]
+position = Vector2( 394, 177 )
+script = ExtResource( 7 )
+
+[node name="NextLevelItem" parent="." instance=ExtResource( 6 )]
+position = Vector2( 332, 349 )
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Environment"]
+position = Vector2( 264, 90 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall9" type="StaticBody2D" parent="Environment"]
+position = Vector2( 347, 177 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -8.11234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall9"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall9"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall12" type="StaticBody2D" parent="Environment"]
+position = Vector2( 291, 305 )
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall12"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall12"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall13" type="StaticBody2D" parent="Environment"]
+position = Vector2( 342, 424 )
+rotation = -0.785397
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall13"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall13"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall14" type="StaticBody2D" parent="Environment"]
+position = Vector2( 440, 425 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall14"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall14"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall15" type="StaticBody2D" parent="Environment"]
+position = Vector2( 543, 323 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall15"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall15"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall16" type="StaticBody2D" parent="Environment"]
+position = Vector2( 529, 425 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall16"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall16"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall17" type="StaticBody2D" parent="Environment"]
+position = Vector2( 628, 325 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -7.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall17"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall17"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall20" type="StaticBody2D" parent="Environment"]
+position = Vector2( 746, 217 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -5.26415 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall20"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall20"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall18" type="StaticBody2D" parent="Environment"]
+position = Vector2( 636, 273 )
+rotation = 1.57079
+scale = Vector2( 0.396963, -4.27234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall18"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall18"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall10" type="StaticBody2D" parent="Environment"]
+position = Vector2( 479, 121 )
+rotation = 1.57079
+scale = Vector2( 0.396963, -8.11234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall10"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall10"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall11" type="StaticBody2D" parent="Environment"]
+position = Vector2( 597, 80.0001 )
+rotation = 0.785397
+scale = Vector2( 0.396963, -5.8496 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall11"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall11"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall2" type="StaticBody2D" parent="Environment"]
+position = Vector2( 691, 89 )
+rotation = -0.785397
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall2"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall2"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall3" type="StaticBody2D" parent="Environment"]
+position = Vector2( 477, 0 )
+rotation = -1.57079
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall3"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall3"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="Environment"]
+position = Vector2( 173, 305 )
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall4"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall4"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="Environment"]
+position = Vector2( 260, 518 )
+rotation = 2.35619
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall5"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall5"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall6" type="StaticBody2D" parent="Environment"]
+position = Vector2( 692, 519 )
+rotation = -2.35619
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall6"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall6"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall7" type="StaticBody2D" parent="Environment"]
+position = Vector2( 474, 604 )
+rotation = -1.57079
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall7"]
+position = Vector2( 6.25952, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall7"]
+modulate = Color( 0, 0.368627, 1, 1 )
+position = Vector2( 12.5956, 0.00409698 )
+scale = Vector2( 20, 21.1049 )
+mesh = SubResource( 2 )
+
+[node name="Wall8" type="StaticBody2D" parent="Environment"]
+position = Vector2( 780, 305 )
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall8"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall8"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="Wall19" type="StaticBody2D" parent="Environment"]
+position = Vector2( 708, 378 )
+scale = Vector2( 0.396963, -12.7792 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Wall19"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Environment/Wall19"]
+modulate = Color( 0, 0.368627, 1, 1 )
+scale = Vector2( 20, 20 )
+mesh = SubResource( 2 )
+
+[node name="RedGuys" type="Node2D" parent="."]
+
+[node name="Enemy" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 203, 195 )
+
+[node name="Enemy2" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 261, 352 )
+
+[node name="Enemy3" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 361, 561 )
+
+[node name="Enemy4" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 555, 474 )
+
+[node name="Enemy5" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 671, 489 )
+
+[node name="Enemy6" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 599, 568 )
+
+[node name="Enemy7" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 687, 221 )
+
+[node name="Enemy8" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 503, 313 )
+
+[node name="Enemy9" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 484, 215 )
+
+[node name="Enemy10" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 484, 157 )
+
+[node name="Enemy11" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 341, 232 )
+
+[node name="Enemy13" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 449, 332 )
+
+[node name="Enemy15" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 390, 333 )
+
+[node name="Enemy16" parent="RedGuys" instance=ExtResource( 2 )]
+position = Vector2( 394, 409 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TutorialText" type="Label" parent="UI"]
+margin_left = 361.0
+margin_top = 7.0
+margin_right = 597.0
+margin_bottom = 38.0
+text = "Oh and btw don't touch the red guys
+because they make you loose"
+
+[node name="LooseUI" type="Control" parent="UI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LooseText" type="Panel" parent="UI/LooseUI"]
+margin_left = 361.0
+margin_top = 82.0
+margin_right = 458.0
+margin_bottom = 122.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Label" type="Label" parent="UI/LooseUI/LooseText"]
+margin_right = 97.0
+margin_bottom = 42.0
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="RetryButton" type="Button" parent="UI/LooseUI"]
+margin_left = 390.0
+margin_top = 250.0
+margin_right = 460.0
+margin_bottom = 270.0
+rect_scale = Vector2( 2, 2 )
+text = "Retry"
+icon_align = 1
+
+[node name="BackToMainMenuButton" type="Button" parent="UI/LooseUI"]
+margin_left = 338.0
+margin_top = 332.0
+margin_right = 462.0
+margin_bottom = 352.0
+rect_scale = Vector2( 2, 2 )
+text = "BackToMainMenu"
+icon_align = 1
+
+[node name="QuitButton" type="Button" parent="UI/LooseUI"]
+margin_left = 348.0
+margin_top = 409.0
+margin_right = 460.0
+margin_bottom = 429.0
+rect_scale = Vector2( 2, 2 )
+text = "Quit to desktop"
+icon_align = 1
+
+[node name="WinScreen" type="Control" parent="UI"]
+visible = false
+margin_top = -43.0
+margin_right = 40.0
+margin_bottom = -3.0
+
+[node name="Panel" type="Panel" parent="UI/WinScreen"]
+margin_left = 355.0
+margin_top = 168.0
+margin_right = 655.0
+margin_bottom = 210.0
+
+[node name="Label" type="Label" parent="UI/WinScreen/Panel"]
+margin_right = 100.0
+margin_bottom = 14.0
+rect_scale = Vector2( 3, 3 )
+text = "Level Complete"
+align = 1
+valign = 1
+
+[node name="NextLevelButton" type="Button" parent="UI/WinScreen"]
+margin_left = 429.0
+margin_top = 296.0
+margin_right = 509.0
+margin_bottom = 316.0
+rect_scale = Vector2( 2, 2 )
+text = "Next Level"
+icon_align = 1
+
+[node name="ReplayLevelButton" type="Button" parent="UI/WinScreen"]
+margin_left = 420.0
+margin_top = 362.0
+margin_right = 508.0
+margin_bottom = 382.0
+rect_scale = Vector2( 2, 2 )
+text = "ReplayLevel"
+icon_align = 1
+
+[node name="BackToMainMenuButton" type="Button" parent="UI/WinScreen"]
+margin_left = 380.0
+margin_top = 427.0
+margin_right = 504.0
+margin_bottom = 447.0
+rect_scale = Vector2( 2, 2 )
+text = "BackToMainMenu"
+icon_align = 1
+
+[node name="QuitButton" type="Button" parent="UI/WinScreen"]
+margin_left = 394.0
+margin_top = 492.0
+margin_right = 506.0
+margin_bottom = 512.0
+rect_scale = Vector2( 2, 2 )
+text = "Quit to desktop"
+icon_align = 1
+
+[connection signal="body_entered" from="PowerUp" to="PowerUp" method="_on_PowerUp_body_entered"]
+[connection signal="picked_up" from="PowerUp" to="Player" method="_on_PowerUp_picked_up"]
+[connection signal="body_entered" from="ImpostorNextLevelItem" to="ImpostorNextLevelItem" method="_on_ImpostorNextLevelItem_body_entered"]
+[connection signal="end_game" from="ImpostorNextLevelItem" to="." method="_on_ImpostorNextLevelItem_end_game"]
+[connection signal="end_game" from="ImpostorNextLevelItem" to="Player" method="_on_ImpostorNextLevelItem_end_game"]
+[connection signal="NextLevelUI" from="NextLevelItem" to="." method="_on_NextLevelItem_NextLevelUI"]
+[connection signal="NextLevelUI" from="NextLevelItem" to="Player" method="_on_NextLevelItem_NextLevelUI"]
+[connection signal="body_entered" from="NextLevelItem" to="NextLevelItem" method="_on_NextLevelItem_body_entered"]
+[connection signal="body_entered" from="RedGuys/Enemy" to="RedGuys/Enemy" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy2" to="RedGuys/Enemy2" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy2" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy2" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy3" to="RedGuys/Enemy3" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy3" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy3" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy4" to="RedGuys/Enemy4" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy4" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy4" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy5" to="RedGuys/Enemy5" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy5" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy5" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy6" to="RedGuys/Enemy6" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy6" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy6" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy7" to="RedGuys/Enemy7" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy7" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy7" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy8" to="RedGuys/Enemy8" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy8" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy8" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy9" to="RedGuys/Enemy9" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy9" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy9" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy10" to="RedGuys/Enemy10" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy10" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy10" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy11" to="RedGuys/Enemy11" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy11" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy11" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy13" to="RedGuys/Enemy13" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy13" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy13" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy15" to="RedGuys/Enemy15" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy15" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy15" to="Player" method="_on_Enemy_end_game"]
+[connection signal="body_entered" from="RedGuys/Enemy16" to="RedGuys/Enemy16" method="_on_Enemy_body_entered"]
+[connection signal="end_game" from="RedGuys/Enemy16" to="." method="_on_Enemy_end_game"]
+[connection signal="end_game" from="RedGuys/Enemy16" to="Player" method="_on_Enemy_end_game"]
+[connection signal="pressed" from="UI/LooseUI/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="UI/LooseUI/BackToMainMenuButton" to="." method="_on_BackToMainMenuButton_pressed"]
+[connection signal="pressed" from="UI/LooseUI/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/ReplayLevelButton" to="." method="_on_ReplayLevelButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/BackToMainMenuButton" to="." method="_on_BackToMainMenuButton_pressed"]
+[connection signal="pressed" from="UI/WinScreen/QuitButton" to="." method="_on_QuitButton_pressed"]

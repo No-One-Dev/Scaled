@@ -1,0 +1,3 @@
+Theme: Scale
+
+*Collect powerups which help you SCALE and pass the level
